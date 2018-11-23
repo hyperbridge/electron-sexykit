@@ -35,12 +35,12 @@ function createWindow() {
         protocol: 'file',
         slashes: true
     }));
-    createPopup();
+   // createPopup();
 }
 
-// open at login
+// open at login set to false
 app.setLoginItemSettings({
-    openAtLogin:true
+    openAtLogin:false
 })
 
 app.on('ready', createWindow);
