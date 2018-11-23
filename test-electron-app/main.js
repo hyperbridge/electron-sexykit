@@ -5,6 +5,9 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
 const prompt = require('electron-prompt');
+const Menu = electron.Menu;
+const Tray = electron.Tray;
+
 
 let win;
 
@@ -43,4 +46,20 @@ app.setLoginItemSettings({
     openAtLogin:false
 })
 
-app.on('ready', createWindow);
+let tray = null;
+
+const myMenu = Menu.buildFromTemplate([
+    { label: 'Eric', type: 'radio' },
+    { label: 'Jim', type: 'radio' },
+    { label: 'Toe', type: 'radio' },
+]);
+
+
+app.on('ready', () => {
+    createWindow();
+    tray = new Tray('./pikachu');
+    tray.setToolTip('Hyperbridge is the best');
+    tray.setContextMenu(myMenu);
+    tray.popUpContextMenu(myMenu);
+
+}); 
