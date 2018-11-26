@@ -1,19 +1,31 @@
 console.log('Index.js');
 
-const {webFrame} = require('electron');
 const electron = require('electron');
+const {webFrame} = require('electron');
 const remote = electron.remote;
-const maxWidth = 1920;
-const maxHeight = 1080; 
 
-window.onresize = () =>{
-    const size = remote.getCurrentWindow().getSize();
-    console.log('Size: ', size);
+const maxWidth = 800;
+const maxHeight = 600; 
+let i = 0;
+
+window.onresize = () => {
+    i++;
+    console.log('Resize detected: ', i);
+    
+    let size = remote.getCurrentWindow().getSize();
+    adjustZoom(size);
 }
 
-// if (size.width > maxWidth || size.height > maxHeight) {
-//     const zoomFactor = Math.min((size.width/maxWidth), (size.height/maxHeight));
-//     webFrame.setZoomFactor(zoomFactor);
-// }
+adjustZoom = (currentWindowSize) => {
+
+    let width = currentWindowSize[0];
+    let height = currentWindowSize[1];
+
+    if (width > maxWidth || height > maxHeight) {
+        const zoomFactor = Math.min((width/maxWidth), (height/maxHeight));
+        webFrame.setZoomFactor(zoomFactor);
+    }
+
+}
 
 
