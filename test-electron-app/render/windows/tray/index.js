@@ -9,7 +9,7 @@ class TrayWindow {
             show: false,
             height: 500,
             width: 500,
-            frane: false,
+            frame: false,
             resizable: false
         });
     
