@@ -5,8 +5,10 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
 const prompt = require('electron-prompt');
+const windowStateKeeper = require('electron-window-state');
 
 let win;
+let windowState;
 
 function createPopup(){
     prompt({
@@ -29,7 +31,12 @@ function createPopup(){
 }
 
 function createWindow() {
-    win = new BrowserWindow();
+    win = new BrowserWindow({
+        'x': windowState.x,
+        'y': windowState.y,
+        'width': windowState.width,
+        'height': windowState.height
+    });
     win.loadURL(url.format({
         pathname: path.join(__dirname, './render/index.html'),
         protocol: 'file',
@@ -43,4 +50,13 @@ app.setLoginItemSettings({
     openAtLogin:false
 })
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+        windowState = windowStateKeeper({
+        defaultWidth: 1000,
+        defaultHeight: 800
+    })
+
+    createWindow();
+    windowState.manage(win);
+});
+
