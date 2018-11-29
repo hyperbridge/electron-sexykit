@@ -5,7 +5,6 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
 const prompt = require('electron-prompt');
-
 let win;
 
 function createPopup(){
@@ -28,24 +27,25 @@ function createPopup(){
     .catch(console.error);
 }
 
-function createWindow() {
-    win = new BrowserWindow();
+app.on('ready', () => {
+
+     win = new BrowserWindow({
+       
+    });
+
     win.loadURL(url.format({
-        pathname: path.join(__dirname, './render/index.html'),
+        pathname: path.join(__dirname, './render/index.html'),            
         protocol: 'file',
         slashes: true
     }));
-    win.setProgressBar(0.5);
-   // createPopup();
-}
 
-// open at login set to false
-app.setLoginItemSettings({
-    openAtLogin:false
-})
-
+    for (var i = 0; i < 100; i++){
+        win.setProgressBar(i); 
+    }
+    
+    
+});
 
 
 
 
-app.on('ready', createWindow);
