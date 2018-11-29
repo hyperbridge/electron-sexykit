@@ -35,6 +35,7 @@ function createWindow() {
         protocol: 'file',
         slashes: true
     }));
+    win.setProgressBar(0.5);
    // createPopup();
 }
 
@@ -42,5 +43,9 @@ function createWindow() {
 app.setLoginItemSettings({
     openAtLogin:false
 })
+
+
+
+
 
 app.on('ready', createWindow);
