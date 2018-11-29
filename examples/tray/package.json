@@ -1,0 +1,14 @@
+{
+    "name": "launch-test",
+    "version": "1.0.0",
+    "main": "main.js",
+    "devDependencies": {
+        "electron": "^3.0.9"
+    },
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        "electron-positioner": "^4.1.0"
+    }
+}
