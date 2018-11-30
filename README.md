@@ -23,9 +23,9 @@ Contains a list of directories each with a proof of concept of an enhancement in
 
 This example demonstrates the change in the zoom factor of the window based on it being resized. To try it out, do the following:
 
-`cd examples/adjust-zoom-on-resize`
-`npm install`
-`npm start`
+`cd examples/adjust-zoom-on-resize`<br/> 
+`npm install`<br/>
+`npm start`<br/>
 
 When the app window loads up, resize it and watch what happens!
 
