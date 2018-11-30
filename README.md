@@ -10,6 +10,15 @@ Our sources include (but are not limited to) the following:
 
 - https://anadea.info/blog/building-desktop-app-with-electron
 
+To get started, clone or download this repository.
+
+If via SSH, use:
+
+`git clone git@github.com:hyperbridge/electron-sexykit.git`<br/> 
+
+If using HTTPS, use:
+
+`git clone https://github.com/hyperbridge/electron-sexykit.git`<br/> 
 
 # Structure
 
