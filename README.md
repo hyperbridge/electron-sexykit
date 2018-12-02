@@ -1,3 +1,13 @@
+<div align="center">
+  <br>
+
+  <a href="https://hyperbridge.org/"><img src="https://hyperbridge.org/img/blockhub-logo_brand-color-h.png" width="400" alt="logo"></a>
+
+  <br>
+
+  [![](https://img.shields.io/discord/458332417909063682.svg)](https://discord.gg/P4NSgQf) [![license](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/hyperbridge/electron-sexykit/blob/master/LICENSE.md) [![Gitter chat](https://img.shields.io/gitter/room/Hyperbridge/Lobby.svg)](https://gitter.im/Hyperbridge/Lobby) [![](https://img.shields.io/badge/telegram-group-blue.svg)](https://t.me/hyperbridgechat) [![](https://img.shields.io/badge/discord-server-brightgreen.svg)](https://discord.gg/wVMTjEb) [![](https://img.shields.io/badge/twitter-%40hyperbridge-blue.svg)](https://twitter.com/@hyperbridge)
+</div>
+
 # Intro
 
 This repository contains examples on UI/UX enhancements for an electron application based on our learning and research through various online articles. 
