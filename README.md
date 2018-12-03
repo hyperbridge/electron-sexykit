@@ -95,6 +95,16 @@ This example demonstrates the functionality for a tray window. To demonstrate, d
 
 When the app window loads up, click on the pikachu icon on the task bar, and wait for a cute surprise!
 
+### [block-screenshots](examples/block-screenshots)
+
+This example demonstrates the ability of the app to block screenshots. To try it, do:
+
+`cd examples/block-screenshots`<br/> 
+`npm install`<br/>
+`npm start`<br/>
+
+Whent the app loads, try to take a screenshot and see what happens!
+
 # [Contributing](CONTRIBUTING.md)
 
 Please review [CONTRIBUTING.md](CONTRIBUTING.md) for more details
