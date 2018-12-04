@@ -12,7 +12,7 @@ let players;
 // Constructor
 module.exports.dataManager = () => {
     checks = [];
-    violations = new HashMap();
+    violations = new HashMap(); // Map<Player, Map<Check, Integer>>
     players = [];
     addChecks();
 }
@@ -37,7 +37,7 @@ module.exports.addCheck = (check) => {
 
 
 module.exports.removeCheck = (check) => {
-   if (isCheck(check)){
+   if (isCheck(check)) {
      checks.splice(checks.indexOf(check), 1); 
    } 
 }
@@ -57,7 +57,7 @@ module.exports.getChecks = () => {
  * Not sure if this is working 
  */
 module.exports.getCheckByName = (checkName) => {
-    for (var i = 0; i < checks.length; i++){
+    for (var i = 0; i < checks.length; i++) {
         if (checks[i].toUpperCase === checkName.toUpperCase){
             return  i;
         }
@@ -69,17 +69,30 @@ module.exports.getCheckByName = (checkName) => {
 
 
 module.exports.getViolationsPlayer = (player, check) => {
-    // TODO
+    let vlmap = new HashMap();
+    if (violations.has(player)) {
+        vlmap = violations.get(player);
+        return vlmap.get(check); // no equivalent to getOrDefault. need to implement it
+    }
+    return 0;  
 }
 
 
-module.exports.addViolation = () => {
-    // TODO
+module.exports.addViolation = (player, check) => {
+    let vlmap = new HashMap();
+    if (violations.has(player)) {
+        vlmap = violations.get(player); // need to see if this works
+    }
 }
 
 
-module.exports.getData = () => {
-    // TODO
+module.exports.getData = (player) => {
+    for (var i = 0; i < players.length; i++) {
+        if (players[i] === player) {
+            return players[i];
+        }
+    }
+    return null; 
 }
 
 
@@ -88,6 +101,11 @@ module.exports.addPlayerData = (player) => {
 }
 
 
-module.exports.removePlayerData = () => {
-    // TODO 
+module.exports.removePlayerData = (player) => {
+     for (var i = 0; i < players.length; i++){
+        if (players[i] === players) {
+            players.splice(players.indexOf(player), 1);
+            break;  
+        }
+     }
 }
