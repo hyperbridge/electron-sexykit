@@ -1,0 +1,11 @@
+{
+    "name": "dll-protection",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+        "start": "node ."
+    },
+    "dependencies": {
+        "memoryjs": "^3.0.2"
+    }
+}
